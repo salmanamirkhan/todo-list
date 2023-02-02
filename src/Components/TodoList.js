@@ -1,16 +1,21 @@
-import "./TodoList.css";
-import Card from "../UI/Card";
-import AddItem from "./AddItem/AddItem";
-import TodoItem from "./TodoItem/TodoItem";
+import React, { useState } from "react";
+import Todoform from "./Todoform";
 
-const TodoList = () => {
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+
+  const addTodo = (todo) => {
+    const newTodo = [todo, ...todos];
+
+    setTodos(newTodo);
+  };
+
   return (
-    <Card className="todo-list">
-      <h1>Todo List</h1>
-      <AddItem />
-      <TodoItem />
-    </Card>
+    <div>
+      <h1>What is the plan for today?</h1>
+      <Todoform onSubmit={addTodo} />
+    </div>
   );
-};
+}
 
 export default TodoList;

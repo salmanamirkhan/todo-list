@@ -1,8 +1,0 @@
-.todo-list {
-  height: 30vh;
-  background-color: aqua;
-  width: 20vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
